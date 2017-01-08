@@ -1,0 +1,10 @@
+# Created by .ignore support plugin (hsz.mobi)
+*.[sqlite3]
+.gitignore
+.idea/
+compta/__pycache__/
+compta/migrations/__pycache__/
+db.sqlite3
+django_compta/__pycache__/
+locale/en/LC_MESSAGES/django.mo
+locale/fr/LC_MESSAGES/django.mo

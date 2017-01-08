@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-01-06 23:30+0100\n"
+"POT-Creation-Date: 2017-01-08 21:33+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-#: .\compta\models.py:9 .\compta\models.py:36 .\compta\models.py:65
+#: .\compta\models.py:9 .\compta\models.py:36 .\compta\models.py:76
 msgid "Account"
 msgstr ""
 
@@ -54,7 +54,7 @@ msgstr "Débit"
 msgid "Credit"
 msgstr "Crédit"
 
-#: .\compta\models.py:32 .\compta\models.py:64
+#: .\compta\models.py:32 .\compta\models.py:75
 msgid "Operation Date"
 msgstr "Date d'opération"
 
@@ -98,7 +98,13 @@ msgstr "Commentaire"
 msgid "Gross Amount (€)"
 msgstr "Montant brut (€)"
 
-#: .\compta\models.py:58
+#: .\compta\models.py:64
+#, fuzzy
+#| msgid "Gross Amount (€)"
+msgid "VAT Amount (€)"
+msgstr "Montant brut (€)"
+
+#: .\compta\models.py:69
 msgid "Amount must be a positive number"
 msgstr "Le montant doit être un nombre positif"
 
