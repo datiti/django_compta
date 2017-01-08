@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-01-08 21:33+0100\n"
+"POT-Creation-Date: 2017-01-09 00:22+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: .\compta\models.py:9 .\compta\models.py:36 .\compta\models.py:76
+#: .\compta\models.py:9 .\compta\models.py:36 .\compta\models.py:87
 msgid "Account"
 msgstr ""
 
@@ -41,7 +41,7 @@ msgstr ""
 msgid "Operation"
 msgstr ""
 
-#: .\compta\models.py:23
+#: .\compta\models.py:23 .\templates\operations\index.html:9
 msgid "Operations"
 msgstr ""
 
@@ -53,7 +53,7 @@ msgstr ""
 msgid "Credit"
 msgstr ""
 
-#: .\compta\models.py:32 .\compta\models.py:75
+#: .\compta\models.py:32 .\compta\models.py:86
 msgid "Operation Date"
 msgstr ""
 
@@ -101,14 +101,18 @@ msgstr ""
 msgid "VAT Amount (€)"
 msgstr ""
 
-#: .\compta\models.py:69
+#: .\compta\models.py:80
 msgid "Amount must be a positive number"
 msgstr ""
 
-#: .\django_compta\settings.py:122
+#: .\django_compta\settings.py:126
 msgid "French"
 msgstr ""
 
-#: .\django_compta\settings.py:123
+#: .\django_compta\settings.py:127
 msgid "English"
+msgstr ""
+
+#: .\templates\operations\index.html:20
+msgid "List of operations"
 msgstr ""

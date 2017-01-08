@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-01-08 21:33+0100\n"
+"POT-Creation-Date: 2017-01-09 00:22+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,9 +18,9 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-#: .\compta\models.py:9 .\compta\models.py:36 .\compta\models.py:76
+#: .\compta\models.py:9 .\compta\models.py:36 .\compta\models.py:87
 msgid "Account"
-msgstr ""
+msgstr "Compte"
 
 #: .\compta\models.py:10
 msgid "Accounts"
@@ -42,7 +42,7 @@ msgstr "Description"
 msgid "Operation"
 msgstr "Opération"
 
-#: .\compta\models.py:23
+#: .\compta\models.py:23 .\templates\operations\index.html:9
 msgid "Operations"
 msgstr "Opérations"
 
@@ -54,7 +54,7 @@ msgstr "Débit"
 msgid "Credit"
 msgstr "Crédit"
 
-#: .\compta\models.py:32 .\compta\models.py:75
+#: .\compta\models.py:32 .\compta\models.py:86
 msgid "Operation Date"
 msgstr "Date d'opération"
 
@@ -99,19 +99,21 @@ msgid "Gross Amount (€)"
 msgstr "Montant brut (€)"
 
 #: .\compta\models.py:64
-#, fuzzy
-#| msgid "Gross Amount (€)"
 msgid "VAT Amount (€)"
-msgstr "Montant brut (€)"
+msgstr "TVA (€)"
 
-#: .\compta\models.py:69
+#: .\compta\models.py:80
 msgid "Amount must be a positive number"
 msgstr "Le montant doit être un nombre positif"
 
-#: .\django_compta\settings.py:122
+#: .\django_compta\settings.py:126
 msgid "French"
 msgstr "Français"
 
-#: .\django_compta\settings.py:123
+#: .\django_compta\settings.py:127
 msgid "English"
 msgstr "Anglais"
+
+#: .\templates\operations\index.html:20
+msgid "List of operations"
+msgstr "Liste des Opérations"

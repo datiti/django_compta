@@ -37,8 +37,8 @@ class Operation(models.Model):
     amount = models.DecimalField(verbose_name=_('Amount'), decimal_places=2, max_digits=12, default=0)
     all_tax_included = models.BooleanField(verbose_name=_('All tax included'), default=True, blank=False)
     apply_vat = models.BooleanField(verbose_name=_('Do apply VAT?'), blank=False, default=True)
-    vat_to_apply = models.DecimalField(verbose_name=_('VAT rate'), decimal_places=2, max_digits=12, default=0,
-                                       blank=True)
+    vat_rate = models.DecimalField(verbose_name=_('VAT rate'), decimal_places=2, max_digits=12, default=0,
+                                   blank=True)
     apply_provision = models.BooleanField(verbose_name=_('Do apply provision?'), blank=False, default=True)
     provision_rate = models.DecimalField(verbose_name=_('Provision rate'), decimal_places=2, max_digits=12, default=40,
                                          blank=True)
@@ -46,25 +46,36 @@ class Operation(models.Model):
 
     @property
     def gross_amount(self) -> float:
-        g = 0;
+        g = 0
         if self.debit_or_credit and self.amount:
             g = int(self.debit_or_credit) * float(self.amount)
         return round(g, 2)
     gross_amount.fget.short_description = _('Gross Amount (€)')
 
     @property
-    def vat_amount(self):
-        vat_amount = 0;
-        if self.apply_vat and self.vat_to_apply > 0 and self.amount:
+    def vat_amount(self) -> float:
+        vat_amount = 0
+        if self.apply_vat and self.vat_rate > 0 and self.amount:
             if self.all_tax_included:
-                vat_amount = self.amount - self.amount / (1 + self.vat_to_apply/100)
+                vat_amount = self.amount - self.amount / (1 + self.vat_rate / 100)
             else:
-                vat_amount = self.amount * self.vat_to_apply/100
+                vat_amount = self.amount * self.vat_rate / 100
         return round(vat_amount, 2)
     vat_amount.fget.short_description = _('VAT Amount (€)')
 
+    @property
+    def provision_amount(self) -> float:
+        p = 0
+        if self.apply_provision and self.provision_rate and self.amount:
+            p = (self.amount - self.vat_amount) * self.provision_rate/100
+        return round(p, 2)
+
     def clean(self):
         validation_errors = []
+        if not self.apply_vat:
+            self.vat_rate = 0
+        if not self.apply_provision:
+            self.provision_rate = 0
         if self.amount <= 0:
             validation_errors.append(_('Amount must be a positive number'))
         if len(validation_errors) > 0:

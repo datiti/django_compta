@@ -1,0 +1,35 @@
+.table-container table > tbody > tr > td > span.true,
+.table-container table > tbody > tr > td > span.false {
+    background-position: top left;
+    background-repeat: no-repeat;
+    display: inline-block;
+    height: 10px;
+    overflow: hidden;
+    text-indent: -200px;
+    width: 10px;
+}
+
+.table-container table > tbody > tr > td > span.true {
+    background-image: url(img/true.gif);
+}
+.table-container table > tbody > tr > td > span.false {
+    background-image: url(img/false.gif);
+}
+.table-container th.asc:after {
+    /*content: '\0000a0\0025b2';*/
+    content: "\f15d";
+    /*content: "\f0de";*/
+    float: right;
+    padding-left: 3px;
+    font-family: FontAwesome;
+    color: #FF0000;
+}
+.table-container th.desc:after {
+    /*content: '\0000a0\0025bc';*/
+    content: "\f15e";
+    /*content: "\f0dd";*/
+    float: right;
+    padding-left: 3px;
+    font-family: FontAwesome;
+    color: #FF0000;
+}

@@ -26,7 +26,10 @@ SECRET_KEY = 'om+kva^gnb6@&w%h^x8ur=-9a)on)-+hdy@o=h^$j^#s6vokt3'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost']
+ALLOWED_HOSTS = [
+    'localhost',
+    '127.0.0.1',
+]
 
 
 # Application definition
@@ -39,6 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'compta',
+    'django_tables2',
 ]
 
 MIDDLEWARE = [
@@ -130,3 +134,6 @@ LOCALE_PATHS = (
 # https://docs.djangoproject.com/en/1.10/howto/static-files/
 
 STATIC_URL = '/static/'
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static'),
+]
