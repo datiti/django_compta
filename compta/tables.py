@@ -2,7 +2,14 @@ import django_tables2 as tables
 from .models import Operation
 
 
+def sum_amount(table) -> float:
+    total = sum(x.gross_amount for x in table.data)
+    return total
+
+
 class OperationTable(tables.Table):
+    account = tables.Column(footer=_('Total Amount (€): '))
+    amount = tables.Column(footer=sum_amount)
     # cannot sort on property columns
     vat_amount = tables.Column(orderable=False)
     provision_amount = tables.Column(orderable=False)

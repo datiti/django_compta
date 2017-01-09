@@ -2,6 +2,7 @@ from django.db import models
 from django.utils.translation import ugettext_lazy as _
 from django.core.exceptions import ValidationError
 from uuid import uuid4
+from compta.datiti.compta import OperationUtils
 
 
 class Account(models.Model):
@@ -44,31 +45,36 @@ class Operation(models.Model):
                                          blank=True)
     comment = models.CharField(verbose_name=_('Comment'), blank=True, max_length=1024)
 
+    utils = None
+
+    def init_utils(self):
+        if self.utils is None:
+            self.utils = OperationUtils(amount=self.amount,
+                                        vat_rate=self.vat_rate,
+                                        apply_vat=self.apply_vat,
+                                        all_tax_included=self.all_tax_included,
+                                        apply_provision=self.apply_provision,
+                                        provision_rate=self.provision_rate,
+                                        debit_or_credit=self.debit_or_credit,
+                                        )
+
     @property
     def gross_amount(self) -> float:
-        g = 0
-        if self.debit_or_credit and self.amount:
-            g = int(self.debit_or_credit) * float(self.amount)
-        return round(g, 2)
+        self.init_utils()
+        return self.utils.gross_amount()
     gross_amount.fget.short_description = _('Gross Amount (€)')
 
     @property
     def vat_amount(self) -> float:
-        vat_amount = 0
-        if self.apply_vat and self.vat_rate > 0 and self.amount:
-            if self.all_tax_included:
-                vat_amount = self.amount - self.amount / (1 + self.vat_rate / 100)
-            else:
-                vat_amount = self.amount * self.vat_rate / 100
-        return round(vat_amount, 2)
+        self.init_utils()
+        return self.utils.vat_amount()
     vat_amount.fget.short_description = _('VAT Amount (€)')
 
     @property
     def provision_amount(self) -> float:
-        p = 0
-        if self.apply_provision and self.provision_rate and self.amount:
-            p = (self.amount - self.vat_amount) * self.provision_rate/100
-        return round(p, 2)
+        self.init_utils()
+        return self.utils.provision_amount()
+    provision_amount.fget.short_description = _('Provision Amount (€)')
 
     def clean(self):
         validation_errors = []
