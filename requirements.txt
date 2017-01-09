@@ -1,0 +1,7 @@
+# django basic support
+django>=1.10
+# html5 table from database
+django-tables2>=1.2.9
+# excel support for xlsx file generation
+django-excel>=0.0.6
+pyexcel-xlsx>=0.3.0
