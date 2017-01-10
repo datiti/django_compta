@@ -24,3 +24,11 @@ python manage.py migrate
 ```
 python manage.py createsuperuser
 ```
+* Create db backup
+```
+python manage.py dbbackup
+```
+* To list db backups
+```
+python manage.py listbackups
+```

@@ -5,7 +5,7 @@ from .models import Operation
 
 def sum_amount(table) -> float:
     total = sum(x.gross_amount for x in table.data)
-    return total
+    return round(total, 2)
 
 
 class OperationTable(tables.Table):
