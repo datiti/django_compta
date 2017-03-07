@@ -1,5 +1,9 @@
 # An accounting application for personal use
 
+## Docker deployment
+
+Soon to be confirmed, see Dockerfile if you want to start it earlier
+
 ## Administration tasks
 
 * Create locales for french and english

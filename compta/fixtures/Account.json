@@ -1,0 +1,18 @@
+[
+  {
+    "model": "compta.Account",
+    "pk": "collab",
+    "fields": {
+      "label": "Collaboration",
+      "description": "Honoraire de collaboration"
+    }
+  },
+  {
+    "model": "compta.Account",
+    "pk": "hp",
+    "fields": {
+      "label": "Honoraires Perso",
+      "description": "Honoraire de dossiers Personnels"
+    }
+  }
+]

@@ -13,3 +13,5 @@ djangorestframework
 celery[redis]
 # db backup with django-dbbackup
 django-dbbackup
+# gunicorn to run django app in the container
+gunicorn
