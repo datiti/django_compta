@@ -18,6 +18,11 @@ class Account(models.Model):
         return self.label
 
 
+class OperationManager(models.Manager):
+    def operation_count(self, account):
+        return self.filter(account=account).count()
+
+
 class Operation(models.Model):
     class Meta:
         verbose_name = _('Operation')
@@ -46,6 +51,8 @@ class Operation(models.Model):
     comment = models.CharField(verbose_name=_('Comment'), blank=True, max_length=1024)
 
     utils = None
+
+    objects = OperationManager()
 
     def init_utils(self):
         if self.utils is None:

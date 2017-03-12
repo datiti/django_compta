@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-01-09 21:53+0100\n"
+"POT-Creation-Date: 2017-03-12 21:52+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: .\compta\models.py:10 .\compta\models.py:37 .\compta\models.py:93
+#: .\compta\models.py:10 .\compta\models.py:42 .\compta\models.py:100
 msgid "Account"
 msgstr ""
 
@@ -25,11 +25,11 @@ msgstr ""
 msgid "Accounts"
 msgstr ""
 
-#: .\compta\models.py:13 .\compta\models.py:32
+#: .\compta\models.py:13 .\compta\models.py:37
 msgid "Identifier"
 msgstr ""
 
-#: .\compta\models.py:14 .\compta\models.py:35
+#: .\compta\models.py:14 .\compta\models.py:40
 msgid "Label"
 msgstr ""
 
@@ -37,87 +37,135 @@ msgstr ""
 msgid "Description"
 msgstr ""
 
-#: .\compta\models.py:23
+#: .\compta\models.py:28
 msgid "Operation"
 msgstr ""
 
-#: .\compta\models.py:24 .\templates\operations\index.html:9
+#: .\compta\models.py:29 .\templates\operations\index.html:9
 msgid "Operations"
 msgstr ""
 
-#: .\compta\models.py:29
+#: .\compta\models.py:34
 msgid "Debit"
 msgstr ""
 
-#: .\compta\models.py:30
+#: .\compta\models.py:35
 msgid "Credit"
 msgstr ""
 
-#: .\compta\models.py:33 .\compta\models.py:92
+#: .\compta\models.py:38 .\compta\models.py:99
 msgid "Operation Date"
 msgstr ""
 
-#: .\compta\models.py:34
+#: .\compta\models.py:39
 msgid "Input Date"
 msgstr ""
 
-#: .\compta\models.py:36
+#: .\compta\models.py:41
 msgid "Debit or credit"
 msgstr ""
 
-#: .\compta\models.py:38
+#: .\compta\models.py:43
 msgid "Amount"
 msgstr ""
 
-#: .\compta\models.py:39
+#: .\compta\models.py:44
 msgid "All tax included"
 msgstr ""
 
-#: .\compta\models.py:40
+#: .\compta\models.py:45
 msgid "Do apply VAT?"
 msgstr ""
 
-#: .\compta\models.py:41
+#: .\compta\models.py:46
 msgid "VAT rate"
 msgstr ""
 
-#: .\compta\models.py:43
+#: .\compta\models.py:48
 msgid "Do apply provision?"
 msgstr ""
 
-#: .\compta\models.py:44
+#: .\compta\models.py:49
 msgid "Provision rate"
 msgstr ""
 
-#: .\compta\models.py:46
+#: .\compta\models.py:51
 msgid "Comment"
 msgstr ""
 
-#: .\compta\models.py:65
+#: .\compta\models.py:72
 msgid "Gross Amount (€)"
 msgstr ""
 
-#: .\compta\models.py:71
+#: .\compta\models.py:78
 msgid "VAT Amount (€)"
 msgstr ""
 
-#: .\compta\models.py:77
+#: .\compta\models.py:84
 msgid "Provision Amount (€)"
 msgstr ""
 
-#: .\compta\models.py:86
+#: .\compta\models.py:93
 msgid "Amount must be a positive number"
 msgstr ""
 
-#: .\compta\tables.py:11
+#: .\compta\tables.py:12
 msgid "Total Amount (€): "
 msgstr ""
 
-#: .\django_compta\settings.py:126
-msgid "French"
+#: .\compta\views.py:34 .\compta\views.py:87
+msgid "operation_date"
+msgstr ""
+
+#: .\compta\views.py:35 .\compta\views.py:88
+msgid "label"
+msgstr ""
+
+#: .\compta\views.py:36 .\compta\views.py:89
+msgid "debit_or_credit"
+msgstr ""
+
+#: .\compta\views.py:37 .\compta\views.py:90
+msgid "account"
+msgstr ""
+
+#: .\compta\views.py:38 .\compta\views.py:91
+msgid "amount"
+msgstr ""
+
+#: .\compta\views.py:39 .\compta\views.py:92
+msgid "vat_rate"
+msgstr ""
+
+#: .\compta\views.py:40 .\compta\views.py:93
+msgid "vat_amount"
+msgstr ""
+
+#: .\compta\views.py:41 .\compta\views.py:94
+msgid "provision_rate"
+msgstr ""
+
+#: .\compta\views.py:42 .\compta\views.py:95
+msgid "provision_amount"
+msgstr ""
+
+#: .\compta\views.py:43 .\compta\views.py:96
+msgid "all_tax_included"
+msgstr ""
+
+#: .\compta\views.py:44 .\compta\views.py:97
+msgid "apply_vat"
+msgstr ""
+
+#: .\compta\views.py:45 .\compta\views.py:98
+msgid "apply_provision"
 msgstr ""
 
 #: .\django_compta\settings.py:127
+msgid "French"
+msgstr ""
+
+#: .\django_compta\settings.py:128
 msgid "English"
 msgstr ""
 
